@@ -89,6 +89,8 @@ public class MountainPath {
 
     public static int[][] readData(String filePath) throws FileNotFoundException {
         // TO DO:  Fully comment this method
+        /* 
+        */
 
         File inputFile = new File(filePath);
         Scanner sc = new Scanner(inputFile);
@@ -201,7 +203,6 @@ public class MountainPath {
                     col++;
                 }
             }
-            //System.out.println("row: " + row + " col: " + col + " elevation " + elevData[row][col]);
             grid.set(row, col, new Color("Red"));
         }
     }
