@@ -1,6 +1,7 @@
 {
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\cng\\OneDrive - South Orangetown Central School District\\Documents\\bridges-java-3.3.0.jar"
+        "c:\\Users\\cng\\OneDrive - South Orangetown Central School District\\Documents\\bridges-java-3.3.0.jar",
+        "c:\\Users\\ctng8\\Downloads\\bridges-java-3.3.0.jar"
     ]
 }

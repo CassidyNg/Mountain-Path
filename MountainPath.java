@@ -51,7 +51,7 @@ public class MountainPath {
 
             // Since this is the default case, elevationData should be set to the default file you wish to use in your project.
             // TO DO: Provide the correct file path operation (String) so that the  method can access the file.
-            elevationData = readData("./Data Files/BHBLarea.dat");
+            elevationData = readData("./Data Files/Colorado_844x480.dat");
 
             // startRow can be any value such that -1 < startRow < elevDataHeight. 100 is just an example value.
             startRow = 100;
@@ -64,10 +64,10 @@ public class MountainPath {
         }
 
         // Accounts for if the startRow is negative or is greater than the elevDataNumOfRows
-        /*if (startRow < 0 || startRow > elevDataNumOfRows - 1) {
+        if (startRow < 0 || startRow > elevDataNumOfRows - 1) {
             System.out.println("Bad starting row number, must be in the range 0 to " + (elevDataNumOfRows - 1));
             System.exit(-1); // This means leave the program.
-        }*/
+        }
 
         // Generate the grayscale image of the elevation data
         ColorGrid grid = getImage(elevationData, elevDataNumOfCols, elevDataNumOfRows, elevDataMaxElevation, elevDataMinElevation);
@@ -156,7 +156,7 @@ public class MountainPath {
         int row = startRow;
         int col = 0;
 
-        while(row < numRows && col < numCols){
+        while(row < numRows && col < numCols - 1){
             float currElev = elevData[row][col];
             float up = 0;
             float forward = elevData[row][col + 1];
@@ -201,6 +201,7 @@ public class MountainPath {
                     col++;
                 }
             }
+            //System.out.println("row: " + row + " col: " + col + " elevation " + elevData[row][col]);
             grid.set(row, col, new Color("Red"));
         }
     }
