@@ -89,7 +89,13 @@ public class MountainPath {
 
     public static int[][] readData(String filePath) throws FileNotFoundException {
         // TO DO:  Fully comment this method
-        /* 
+
+        /** 
+         * Takes the String parameter and uses it as an input for the Scanner object to locate the file
+         * It takes the nextInt(), which are the two numbers at the top of the file, and stores them as the number of columns and the number of rows 
+         * After creating a 2D Array with those values, it loops through all the rows and columns of the file and stores them in the corresponding index in the array
+         * While in the for loop, it constantly checks to see if the the current value is greater than or less than the max/min value to find the maximum and minimum elevation
+         * Following the for loop, the method returns the 2D Array with the data from the specified file
         */
 
         File inputFile = new File(filePath);
@@ -125,6 +131,16 @@ public class MountainPath {
 
     public static ColorGrid getImage(int[][] elevData, int numCols, int numRows, int maxVal, int minVal) {
         // TO DO:  Fully comment this method
+
+        /**
+         * Using the numRows and numCols parameters, it creates a new ColorGrid with the correct number of pixels to form the image
+         * As it loops through the 2D Array elevData, it finds the elevation at each pixel and calculates its value on the grayScale
+         * To calculate the value, it finds the difference between the current elevation and the minimum elevation, multiplying it by 255 (the max value an RGB can have)
+         * It divides the calculated value by the difference between the max and min value as a comparison, determining whether the elevation is
+         * on the higher or lower end
+         * With the grayScale value, it sets each pixel to a color consisting of the same value for red, green, and blue, since the same value for all colors means its gray
+         * After setting each pixel to a shade of gray, depending on its elevation, the method returns the ColorGrid object
+         */
 
         ColorGrid grid = new ColorGrid(numRows, numCols);
 
