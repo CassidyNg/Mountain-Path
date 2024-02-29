@@ -30,7 +30,7 @@ public class MountainPath {
         bridges.setTitle("Mountain Paths - The Greedy Algorithm");
 
         // elevationData is an int array that stores the elevation data from a .dat file.
-        int[][] elevationData = new int[85][149];
+        int[][] elevationData = new int[480][844];
 
         // startRow is the row in which the path starts. When startRow = 0, the path starts at the top of the map.
         int startRow = 0;
@@ -52,9 +52,11 @@ public class MountainPath {
             // Since this is the default case, elevationData should be set to the default file you wish to use in your project.
             // TO DO: Provide the correct file path operation (String) so that the  method can access the file.
             elevationData = readData("./Data Files/Colorado_844x480.dat");
+            // elevationData = readData(filePath:"./Data Files/Colorado_480x480.dat");
+            // elevationData = readData(filePath:"./Data Files/BHBLarea.dat")
 
             // startRow can be any value such that -1 < startRow < elevDataHeight. 100 is just an example value.
-            startRow = 100;
+            startRow = 240;
         }
 
         // Case #2, where two parameters are passed: (String fileName, String startRow)
